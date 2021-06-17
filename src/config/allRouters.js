@@ -1,4 +1,4 @@
-import { Route as ReactRoute } from 'react-router-dom'
+import { Route as ReactRoute, Redirect } from 'react-router-dom'
 import { HomePage } from '../pages/HomePage'
 import { LoginPage } from '../pages/LoginPage'
 import { UpdatePage } from '../pages/UpdatePage'
@@ -21,30 +21,20 @@ export const allRouters = [
 ]
 
 
-/*
-export const Route = ({path, exact, Component})=> {
-  console.log(path)
+export const Route = ({path, exact, Component, session, autho})=> {
+
+  if(autho && !session.token)
+    return <Redirect to={PATH.LoginPage.path} />
+
+  if(session.token && path === PATH.LoginPage.path)
+    return <Redirect to={PATH.Home.path} />
+
   return (
     <ReactRoute
       path={path}
       key={path}
       exact={exact}
-      render={ props => <Component {...props} /> }
+      render={ props => <Component {...props}/> }
     />
   )
 }
- borrar
-*/
-export const Route = route => {
-  return (
-    <ReactRoute
-      path={route.path}
-      key={route.path}
-      exact={route.exact}
-      render={
-        props => <route.Component {...props} />
-      }
-    />
-  )
-}
-

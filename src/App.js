@@ -14,7 +14,7 @@ export const App = () => {
       { session.user && <Navbar/> }
       <Switch>
         <Container fluid>
-          {allRouters.map(route => <Route {...route}/>)}
+          {allRouters.map(route => <Route {...route} session={session}/>)}
         </Container>
       </Switch>
     </Router>
