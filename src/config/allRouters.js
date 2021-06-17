@@ -6,8 +6,8 @@ import { PATH } from './PATH'
 
 class RouteObj {
   constructor(path, Component, autho=true, exact=true){
-    this.path = path
-    this.key = path
+    this.path = path.path
+    this.key = path.name
     this.Component = Component
     this.autho = autho
     this.exact = exact
@@ -25,6 +25,7 @@ export const Route = route => {
     <ReactRoute
       path={route.path}
       key={route.key}
+      exact={route.exact}
       render={
         props => <route.Component {...props} />
       }
