@@ -9,6 +9,6 @@ export const PATH = {
   },
   UpdatePage: {
     name: 'Edit Post',
-    path: 'UpdatePost'
+    path: '/UpdatePost'
   }
 }
