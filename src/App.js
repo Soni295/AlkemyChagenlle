@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import { BrowserRouter, Switch } from 'react-router-dom'
 import { allRouters, Route } from './config/allRouters'
 import { Container } from 'react-bootstrap'
 import { Navbar } from './components/NavBar/index'
@@ -10,13 +10,13 @@ export const App = () => {
  const {session, dispatch} = UserReducer()
 
   return (
-    <Router>
+    <BrowserRouter>
       { session.user && <Navbar/> }
       <Switch>
         <Container fluid>
-          {allRouters.map(route => <Route {...route} session={session}/>)}
+          {allRouters.map(route => <Route {...route}/>)}
         </Container>
       </Switch>
-    </Router>
+    </BrowserRouter>
   )
 }

@@ -21,12 +21,14 @@ export const allRouters = [
 ]
 
 
-export const Route = ({path, exact, Component, session, autho})=> {
+export const Route = ({path, exact, Component, autho})=> {
 
-  if(autho && !session.token)
+  const token = localStorage.getItem('token')
+
+  if(autho && !token)
     return <Redirect to={PATH.LoginPage.path} />
 
-  if(session.token && path === PATH.LoginPage.path)
+  if(token && path === PATH.LoginPage.path)
     return <Redirect to={PATH.Home.path} />
 
   return (
@@ -34,7 +36,7 @@ export const Route = ({path, exact, Component, session, autho})=> {
       path={path}
       key={path}
       exact={exact}
-      render={ props => <Component {...props}/> }
+      component={Component}
     />
   )
 }
