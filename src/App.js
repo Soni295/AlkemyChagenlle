@@ -13,7 +13,7 @@ export const App = () => {
     <BrowserRouter>
       { session.user && <Navbar/> }
       <Switch>
-        <Container fluid>
+        <Container fluid className='h-100'>
           {allRouters.map(route => <Route {...route}/>)}
         </Container>
       </Switch>
