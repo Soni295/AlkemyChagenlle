@@ -9,13 +9,15 @@
   justify-items: center;
 }
 .login-box {
-  height: 300px;
   max-width: 500px;
   border-radius: 10px;
   background-color: var(--glass);
   backdrop-filter: blur(5px);
 }
-
 .login-box > h2{
-  margin: 20px 30px;
+  margin: 20px 0;
+}
+.login-box > form {
+  display: grid;
+  padding: 20px;
 }
