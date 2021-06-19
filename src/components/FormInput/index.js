@@ -1,6 +1,5 @@
 import { Form } from 'react-bootstrap'
 
-/*
 export const Input = ({name, placeholder, type, control, children}) => (
   <Form.Group controlId={name}>
     <Form.Control
@@ -22,7 +21,6 @@ export const Input = ({name, placeholder, type, control, children}) => (
     }
   </Form.Group>
 )
-*/
 
 export class InputGenerator {
   constructor(name, placeholder, ctrl, type=name){
@@ -33,6 +31,7 @@ export class InputGenerator {
   }
 }
 
+/*
 export const Input = ({name, placeholder, type, control}) => (
   <Form.Group controlId={name}>
     <Form.Control
@@ -43,3 +42,4 @@ export const Input = ({name, placeholder, type, control}) => (
     />
   </Form.Group>
 )
+*/
