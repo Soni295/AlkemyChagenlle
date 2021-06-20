@@ -13,15 +13,21 @@ export const actionType = {
 export const reducer = (state, action) => {
   switch(action.type) {
     case actionType.LOADING:
-      return {...state}
+      return {...state, loading: true}
 
     case actionType.LOGIN_SUCCESS:
-      return {...state}
+      return {
+        ...state,
+        user: action.payload.user,
+        token: action.payload.token,
+        loading: false
+      }
 
     case actionType.LOGIN_FAILED:
-      return {...state}
+      return {...state, loading: false}
 
     default:
+      console.log('error')
       return {...state}
   }
 }

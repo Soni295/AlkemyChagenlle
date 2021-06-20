@@ -1,20 +1,26 @@
+import { useContext } from 'react'
 import { useFormik } from 'formik'
-import { LoginApi } from '../../config/Apis'
+
 import { validate, initialValues, typeOfMsg } from './validate'
 
+import { UserContext } from '../../context/UserContext'
+import { LoginApi } from '../../config/Apis'
+
 export const HandleLogin = () => {
+  const {session, dispatch} = useContext(UserContext)
 
   const onSubmit = values => {
-    console.log('hola')
+    console.log(values)
     LoginApi
       .post('', values)
       .then(res => res.data.token)
-      .then(token => console.log(token))
+      .then(token => dispatch.success(values.email, token))
       .catch( err => {
         const msg = typeOfMsg[err.message] || 'Error'
+        dispatch.fail()
         alert(msg)
       })
-      .then(() => alert('hola'))
+      console.log(session)
   }
 
   const formik = useFormik({initialValues, onSubmit, validate})
