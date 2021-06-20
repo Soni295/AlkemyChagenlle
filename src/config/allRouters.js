@@ -1,6 +1,7 @@
 import { Route as ReactRoute, Redirect } from 'react-router-dom'
 import { HomePage } from '../pages/HomePage'
 import { LoginPage } from '../pages/LoginPage'
+import { PostPage } from '../pages/PostPage'
 import { UpdatePage } from '../pages/UpdatePage'
 import { PATH } from './PATH'
 
@@ -17,6 +18,7 @@ class RouteObj {
 export const allRouters = [
   new RouteObj(PATH.Home, HomePage),
   new RouteObj(PATH.UpdatePage, UpdatePage),
+  new RouteObj(PATH.Post, PostPage),
   new RouteObj(PATH.LoginPage, LoginPage, false),
 ]
 

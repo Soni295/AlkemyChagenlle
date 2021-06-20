@@ -1,0 +1,24 @@
+.full-post {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: var(--info);
+  border-radius: 20px;
+  padding: 20px 10px;
+}
+.full-post > * {
+  text-align: left !important;
+}
+.full-post > h3 {
+  margin-left: 10px;
+}
+.full-post > h4 {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.full-post > p {
+  font-size: 1.250em;
+  margin-left: 20px;
+}

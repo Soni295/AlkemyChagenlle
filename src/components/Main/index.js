@@ -22,6 +22,7 @@ export const Main = () => {
     dispatch.getPostsSucess(data)
   }, [])
 
+  console.log(postsState)
   return (
     <Container fluid>
       {postsState.posts.map(publication =>

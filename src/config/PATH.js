@@ -10,5 +10,9 @@ export const PATH = {
   UpdatePage: {
     name: 'Edit Post',
     path: '/UpdatePost'
+  },
+  Post: {
+    name: 'Post',
+    path: '/Post/:id'
   }
 }
