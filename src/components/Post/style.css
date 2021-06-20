@@ -1,0 +1,7 @@
+.post {
+  background-color: var(--secondary);
+  margin: 10px 30px;
+  border-radius: 20px;
+  text-align: left;
+  height: 150px;
+}

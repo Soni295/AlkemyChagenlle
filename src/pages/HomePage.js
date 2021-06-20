@@ -1,5 +1,5 @@
+import { Main } from '../components/Main/index'
+
 export const HomePage = () => {
-  return (
-    <div>hello home</div>
-  )
+  return <Main/>
 }
