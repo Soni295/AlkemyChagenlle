@@ -21,7 +21,6 @@ export const allRouters = [
 ]
 
 export const Route = ({autho, ...rest}) => {
-
   const token = localStorage.getItem('token')
 
   if(autho && !token)

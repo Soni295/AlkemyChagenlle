@@ -1,6 +1,6 @@
 export const initState = {
   user: null,
-  token: null,
+  token: localStorage.getItem('token') || null,
   loading: false
 }
 

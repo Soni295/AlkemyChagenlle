@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useReducer, useEffect } from 'react'
 import { initState, actionType, reducer } from './reducer'
 
 export const UserReducer = () => {
@@ -12,6 +12,10 @@ export const UserReducer = () => {
     fail: () =>
       setSession({type: actionType.LOGIN_FAILED}),
   }
+
+  useEffect(() => {
+    if(session.token) localStorage.setItem('token', session.token);
+  }, [session.token])
 
   return {session, dispatch}
 }
