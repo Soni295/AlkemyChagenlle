@@ -1,7 +1,11 @@
+.card {
+  min-height: 12rem;
+}
 .post {
-  background-color: var(--secondary);
-  margin: 10px 30px;
-  border-radius: 20px;
-  text-align: left;
-  height: 150px;
+  display: grid;
+  height: 100%;
+  width: 18rem;
+}
+.post > .card-footer {
+  align-self: flex-end;
 }

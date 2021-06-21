@@ -1,0 +1,7 @@
+.main {
+  margin-top: 52px !important;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  margin: .5rem;
+}

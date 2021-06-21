@@ -1,36 +1,31 @@
-import { useEffect } from 'react'
-//import { JPHApi } from '../../config/Apis'
-
 import { Container } from 'react-bootstrap'
-import { PostReducer } from '../../reducer/PostReducer/PostReducer'
-
-import data from '../../config/example.json'
+import { useLogic } from './logic'
 
 import { Post } from '../Post/index'
+import { AlertModal } from '../Modal/AlertModal/index'
+import { EditModal } from '../Modal/EditModal/index'
+import './style.css'
 
 export const Main = () => {
-  const {postsState, dispatch} = PostReducer()
-
-  useEffect(() => {
-    dispatch.loading()
-    /*
-    JPHApi
-      .get('')
-      .then(res => console.log(res.data))
-    */
-
-    dispatch.getPostsSucess(data)
-  }, [])
-
-  console.log(postsState)
-  return (
-    <Container fluid>
-      {postsState.posts.map(publication =>
+  const {modal, setModal, posts, editPost, setEditPost, formik} = useLogic()
+  return (<>
+    <AlertModal
+      modal={modal}
+      setModal={setModal}
+    />
+    <EditModal
+      modal={editPost}
+      setModal={setEditPost}
+      formik={formik}
+    />
+    <Container fluid className='main'>
+      {posts.map(publication =>
         <Post
           key={publication.title + publication.userId}
+          setEditModal={setEditPost}
           {...publication}
         />
       )}
     </Container>
-  )
+  </>)
 }

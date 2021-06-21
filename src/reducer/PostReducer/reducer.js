@@ -6,9 +6,7 @@ export const initState = {
 export const actionType = {
   LOADING: 'LOADING',
   GET_POSTS_SUCCESS: 'GET_POSTS_SUCCESS',
-  GET_POSTS_fail: 'GET_POSTS_fail',
-  GET_POST_ID_SUCCESS: 'GET_POST_ID_SUCCESS',
-  GET_POST_ID_fail: 'GET_POST_ID_fail',
+  GET_POSTS_FAIL: 'GET_POSTS_FAIL',
 }
 
 export const reducer = (state, action) => {

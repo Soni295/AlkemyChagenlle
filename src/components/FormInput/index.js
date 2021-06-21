@@ -1,6 +1,6 @@
 import { Form } from 'react-bootstrap'
 
-export const Input = ({name, placeholder, type, control, children}) => (
+export const Input = ({name, placeholder, type, control}) => (
   <Form.Group controlId={name}>
     <Form.Control
       data-testid={name}
@@ -11,7 +11,6 @@ export const Input = ({name, placeholder, type, control, children}) => (
       value={control.values[name]}
       onBlur={control.handleBlur}
     />
-    {children}
     {control.errors[name] && control.touched[name]
       ?
         <Form.Text className="text-muted error">
@@ -23,23 +22,9 @@ export const Input = ({name, placeholder, type, control, children}) => (
 )
 
 export class InputGenerator {
-  constructor(name, placeholder, ctrl, type=name){
+  constructor(name, placeholder, type=name){
    this.name = name
    this.type = type
    this.placeholder = placeholder
-   this.control = ctrl
   }
 }
-
-/*
-export const Input = ({name, placeholder, type, control}) => (
-  <Form.Group controlId={name}>
-    <Form.Control
-      data-testid={name}
-      name={name}
-      type={type}
-      placeholder={placeholder}
-    />
-  </Form.Group>
-)
-*/

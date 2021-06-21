@@ -8,7 +8,6 @@ import { AlertModal } from '../Modal/AlertModal/index'
 import './style.css'
 
 export const LoginForm = () => {
-
   const {formik, modal, setModal} = HandleLogin()
   return(
     <main id='bg-login'>

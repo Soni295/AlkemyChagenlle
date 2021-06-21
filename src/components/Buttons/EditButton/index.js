@@ -1,5 +1,11 @@
 import { Button } from 'react-bootstrap'
-export const EditButton = () =>{
-  const handleEditButton = () => console.log('hola')
+import { JPHApi } from '../../../config/Apis'
+
+export const EditButton = ({id, setEditModal}) =>{
+  const handleEditButton = () => {
+    JPHApi
+      .get('/' + id)
+      .then(res => setEditModal.success(res.data))
+  }
   return <Button onClick={handleEditButton}>Edit</Button>
 }

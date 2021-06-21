@@ -8,11 +8,10 @@ import { LoginApi } from '../../config/Apis'
 import { useModal } from '../../hooks/useModal'
 
 export const HandleLogin = () => {
-  const {dispatch} = useContext(UserContext)
-  const { modal, setModal} = useModal('Login Error')
+  const { dispatch } = useContext(UserContext)
+  const { modal, setModal } = useModal('Login Error')
 
   const onSubmit = values => {
-    console.log(modal)
     LoginApi
       .post('', values)
       .then(res => res.data.token)
